@@ -1,0 +1,7 @@
+minikube service unleash --url -n infra
+
+minikube tunnel
+
+unleash dashboard:
+    username: admin
+    password: unleash4all
