@@ -11,10 +11,8 @@ spec:
     chart: unleash
     helm:
       values: |-
-        ingress:
-          enabled: true
         service:
-          type: LoadBalancer
+          type: NodePort
           port: 34242
   destination:
     server: 'https://kubernetes.default.svc'
