@@ -27,7 +27,7 @@ spec:
           replicaCount: 1
   destination:
     server: https://kubernetes.default.svc
-    namespace: infra
+    namespace: ingress
   syncPolicy:
     automated:
       prune: true

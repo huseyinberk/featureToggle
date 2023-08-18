@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: unleash-ui
-  namespace: infra
+  namespace: ingress
 spec:
   ingressClassName: nginx-demo
   rules:
