@@ -2,6 +2,9 @@ minikube service unleash --url -n infra
 
 minikube tunnel
 
+kubectl port-forward svc/argocd-server -n argocd 8099:443
+
+
 unleash dashboard:
     username: admin
     password: unleash4all
