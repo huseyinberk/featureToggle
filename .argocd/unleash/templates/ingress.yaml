@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ingress
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://kubernetes.github.io/ingress-nginx'
+    chart: ingress-nginx
+    targetRevision: 4.6.1
+    helm:
+      values: |-
+        controller:
+          config:
+            compute-full-forwarded-for: true
+            use-forwarded-headers: true
+          service:
+            type: NodePort
+            nodePorts:
+              http: 32080
+              https: 32443
+          ingressClassResource:
+            name: nginx-demo
+            enabled: true
+            default: false
+          replicaCount: 1
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: infra
+  syncPolicy:
+    automated:
+      prune: true

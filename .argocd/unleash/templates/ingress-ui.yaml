@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: unleash-ui
+  namespace: infra
+spec:
+  ingressClassName: nginx-demo
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: /unleash
+            backend:
+              service:
+                name: unleash
+                port:
+                  number: 80
