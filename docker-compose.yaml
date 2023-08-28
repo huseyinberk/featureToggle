@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  unleash:
+    image: unleashorg/unleash-server:latest
+    ports:
+      - "4242:4242"
+    environment:
+      INIT_CLIENT_API_TOKENS: default:development.unleash-insecure-api-token
+    depends_on:
+      - postgres
+    restart: always
+
+
+  unleash-proxy:
+    image: unleashorg/unleash-proxy:latest
+    ports:
+      - "3000:3000"
+    environment:
+      UNLEASH_URL: http://host.docker.internal:4242/api/
+      UNLEASH_API_TOKEN: default:development.unleash-insecure-api-token
+    depends_on:
+      - unleash
+    restart: always
+
+
