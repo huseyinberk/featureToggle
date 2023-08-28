@@ -13,7 +13,7 @@ class MyService(unleash: Unleash) {
     }
 
     val message: String
-        get() = if (unleash.isEnabled("deneme")) {
+        get() = if (unleash.isEnabled("example")) {
             "New feature is enabled!"
         } else {
             "Old feature is being used."
