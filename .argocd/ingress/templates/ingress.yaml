@@ -18,8 +18,8 @@ spec:
           service:
             type: NodePort
             nodePorts:
-              http: 32080
-              https: 32443
+              http: 30080
+              https: 30443
           ingressClassResource:
             name: nginx-demo
             enabled: true
