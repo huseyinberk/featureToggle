@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: unleash-proxy
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://docs.getunleash.io/helm-charts'
+    targetRevision: 0.6.1
+    chart: unleash-proxy
+    helm:
+      values: |-
+        proxy:
+          logLevel: debug
+          serverHost: http://unleash-server.unleash:4242/unleash/api/
+          apiToken: default:development.unleash-insecure-api-token
+          clientKeys:
+            - default:development.unleash-insecure-api-token
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: infra
+  syncPolicy:
+    syncOptions:
+      - ServerSideApply=true
+    automated:
+      prune: true
