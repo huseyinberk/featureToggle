@@ -10,10 +10,19 @@ spec:
     targetRevision: 3.0.2
     chart: unleash
     helm:
-      values: |-
-        service:
-          type: NodePort
-          port: 34242
+      values:
+        valuesObject:
+          livenessProbe:
+            path: /unleash/health
+          readinessProbe:
+            path: /unleash/health
+          env:
+            - name: INIT_CLIENT_API_TOKENS
+              value:  default:development.unleash-insecure-api-token
+            - name: BASE_URI_PATH
+              value: /unleash
+            - name: LOG_LEVEL
+              value: debug
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: infra
