@@ -37,4 +37,4 @@ command to run if program contains helper info
 Contributors names and contact info
 
 ex. Hüseyin Berk    
-ex. [@huseyinberk](https://twitter.com/_huseyinberk)
+ex. [@huseyinberk](https://www.linkedin.com/in/huseyinberk/)
