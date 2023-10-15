@@ -10,31 +10,25 @@ Main goal for the project is to create an example of Unleash setup for feature t
 
 ### Dependencies
 
-* With docker,
+* On local,
   * Docker
-* With Kubernetes
+* On k8s cluster,
   * Kubernetes Cluster
   * ArgoCd
   * Helm
 
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
-
 ## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+This project only shows how to install Unleash in docker and k8s environments. However it has a spring boot configuration class for Unleash. You can configure Unleash in your project by reviewing the code in the project.
+
+I set up the K8s cluster with the help of helm charts in accordance with the gitops approach
+
+In your production environment, it would be more reliable to store the parameters given to Spring boot to configure Unleash using a tool like vault or secrets.
+
 
 ## Authors
 
-Contributors names and contact info
+Hüseyin Berk Yılmaz
 
-ex. Hüseyin Berk    
-ex. [@huseyinberk](https://www.linkedin.com/in/huseyinberk/)
+[@Linkedin](https://www.linkedin.com/in/huseyinberk/)
+[@X](https://twitter.com/_huseyinberk)
