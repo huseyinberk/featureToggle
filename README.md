@@ -14,7 +14,6 @@ Main goal for the project is to create an example of Unleash setup for feature t
   * Docker
 * On k8s cluster,
   * Kubernetes Cluster
-  * ArgoCd
   * Helm
 
 ## Help
